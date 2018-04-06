@@ -9,3 +9,16 @@ C:\Users\TRANTRAM\documents\visual studio 2015\Projects\QuanlyKS\QuanlyKS\bin\De
 C:\Users\TRANTRAM\documents\visual studio 2015\Projects\QuanlyKS\QuanlyKS\obj\Debug\QuanlyKS.exe
 C:\Users\TRANTRAM\documents\visual studio 2015\Projects\QuanlyKS\QuanlyKS\obj\Debug\QuanlyKS.pdb
 C:\Users\TRANTRAM\documents\visual studio 2015\Projects\QuanlyKS\QuanlyKS\obj\Debug\QuanlyKS.QuanlyDP.resources
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\bin\Debug\QuanlyKS.exe.config
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.exe
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.pdb
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\bin\Debug\QuanlyKS.exe
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\bin\Debug\QuanlyKS.pdb
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.csprojResolveAssemblyReference.cache
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.Dangnhap.resources
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.QuanlyDP.resources
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.QuanlyTP.resources
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.Properties.Resources.resources
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.csproj.GenerateResource.Cache
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.QuanlyPh.resources
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.QuanlyNV.resources

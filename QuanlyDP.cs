@@ -32,5 +32,13 @@ namespace QuanlyKS
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận hủy đặt phòng!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                MessageBox.Show("Hủy đặt phòng thành công!");
+            }
+        }
     }
 }

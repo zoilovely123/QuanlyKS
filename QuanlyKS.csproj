@@ -58,6 +58,18 @@
     <Compile Include="QuanlyDP.Designer.cs">
       <DependentUpon>QuanlyDP.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanlyNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanlyNV.Designer.cs">
+      <DependentUpon>QuanlyNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlyPh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanlyPh.Designer.cs">
+      <DependentUpon>QuanlyPh.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanlyTP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +84,12 @@
     <EmbeddedResource Include="QuanlyDP.resx">
       <DependentUpon>QuanlyDP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanlyNV.resx">
+      <DependentUpon>QuanlyNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanlyPh.resx">
+      <DependentUpon>QuanlyPh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanlyTP.resx">
       <DependentUpon>QuanlyTP.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,6 +115,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_edit_216184.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_delete-outline_216169.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_add-circle-outline_326501.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

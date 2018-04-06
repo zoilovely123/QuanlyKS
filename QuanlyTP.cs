@@ -66,5 +66,30 @@ namespace QuanlyKS
             quanly.FormClosed += new FormClosedEventHandler(quanlyDP_formclosed);
             quanly.Show();
         }
+
+        private void quanlyPh_formclosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
+
+        private void quanlyPh_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            QuanlyPh quanly = new QuanlyPh();
+            quanly.FormClosed += new FormClosedEventHandler(quanlyPh_formclosed);
+            quanly.Show();
+        }
+
+        private void quanlyNV_formclosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
+        private void quanlyNV_Click(object sender, EventArgs e)
+        {
+            QuanlyNV quanly = new QuanlyNV();
+            this.Hide();
+            quanly.FormClosed += new FormClosedEventHandler(quanlyNV_formclosed);
+            quanly.Show();
+        }
     }
 }

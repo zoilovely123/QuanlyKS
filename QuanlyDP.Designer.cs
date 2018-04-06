@@ -242,21 +242,24 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(450, 172);
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(413, 162);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(98, 33);
             this.button2.TabIndex = 10;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = "Hủy đặt phòng";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(531, 172);
+            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button1.Location = new System.Drawing.Point(518, 162);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(91, 33);
             this.button1.TabIndex = 9;
             this.button1.Text = "Nhận phòng";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label9

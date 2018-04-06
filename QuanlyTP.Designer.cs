@@ -386,12 +386,14 @@
             this.quanlyPh.Name = "quanlyPh";
             this.quanlyPh.Size = new System.Drawing.Size(98, 20);
             this.quanlyPh.Text = "Quản lý phòng";
+            this.quanlyPh.Click += new System.EventHandler(this.quanlyPh_Click);
             // 
             // quanlyNV
             // 
             this.quanlyNV.Name = "quanlyNV";
             this.quanlyNV.Size = new System.Drawing.Size(115, 20);
             this.quanlyNV.Text = "Quản lý nhân viên";
+            this.quanlyNV.Click += new System.EventHandler(this.quanlyNV_Click);
             // 
             // thongke
             // 
