@@ -52,6 +52,7 @@
     <Compile Include="Dangnhap.Designer.cs">
       <DependentUpon>Dangnhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBconnecter.cs" />
     <Compile Include="QuanlyDP.cs">
       <SubType>Form</SubType>
     </Compile>

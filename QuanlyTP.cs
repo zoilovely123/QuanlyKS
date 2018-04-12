@@ -91,5 +91,13 @@ namespace QuanlyKS
             quanly.FormClosed += new FormClosedEventHandler(quanlyNV_formclosed);
             quanly.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận đặt phòng!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                MessageBox.Show("Đặt phòng thành công!");
+            }
+        }
     }
 }
