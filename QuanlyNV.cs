@@ -30,6 +30,7 @@ namespace QuanlyKS
 
         private void btAdd_Click(object sender, EventArgs e)
         {
+            PanTool.Visible = false;
             txtMaNV.ReadOnly = false;
             txtTenNV.ReadOnly = false;
             cbbGTinh.Enabled = true;
@@ -52,8 +53,37 @@ namespace QuanlyKS
             load();
         }
 
+        private void data_DSNV_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            loadToTextBox(true);
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            int curRow = this.data_DSNV.CurrentRow.Index;
+            string del_NV = "delete from NhanVien where MaNV=@MANV";
+            SqlCommand cmd = new SqlCommand(del_NV, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new SqlParameter("@MANV", this.manv = this.data_DSNV.Rows[curRow].Cells[0].Value.ToString()));
+            if (MessageBox.Show("Bạn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                loadToTextBox(true);
+                load();
+                xoa_textBox();
+            }
+        }
+
+
+
         private void btLuu_Click(object sender, EventArgs e)
         {
+            ngaysinh = dtNgaySinh.Value.ToString("yyyy-MM-dd");
+            timelam = dtLamviec.Value.ToString("yyyy-MM-dd");
+            timenghi = dtThoiviec.Value.ToString("yyyy-MM-dd");
             if (id)
             {
                 if((txtMaNV.Text!="")&&(txtTenNV.Text!="")&&(txtCMND.Text!="")&&(txtSDT.Text!="")&&(txtDiaChi.Text!="")
@@ -62,25 +92,25 @@ namespace QuanlyKS
                     {
                         
                         con.Open();
-                        string edit_NV = "update NhanVien set tenNV=@tennv,gioiTinh=@gioitinh,ngaySinh=@ngaysinh,cmnd=@cmnd,sdt=@sdt,chucVu=@chucvu, diaChi=@diachi, luong=@luong, timeLam=@timelam, timeNghi=@timenghi where maNV=@manv";
+                        string edit_NV = "update NhanVien set TenNV=@tennv,GioiTinh=@gioitinh,NgaySinh=@ngaysinh,CMND=@cmnd,SDT=@sdt,ChucVu=@chucvu, DiaChi=@diachi, Luong=@luong, ThoiGianVaoLam=@timelam, ThoiGianNghi=@timenghi where MaNV=@manv";
                         SqlCommand cmd = new SqlCommand(edit_NV, con);
                         cmd.CommandType = CommandType.Text;
                         cmd.Parameters.Add(new SqlParameter("@manv", txtMaNV.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@tennv", txtTenNV.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@gioitinh", cbbGTinh.Text.Trim()));
-                        cmd.Parameters.Add(new SqlParameter("@ngaysinh", dtNgaySinh.Value.ToString("dd/mm/yyyy").Trim()));
+                        cmd.Parameters.Add(new SqlParameter("@ngaysinh", ngaysinh.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@cmnd", txtCMND.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@sdt", txtSDT.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@chucvu", cbbChucVu.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@diachi", txtDiaChi.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@luong", txtLuong.Text.Trim()));
-                        cmd.Parameters.Add(new SqlParameter("@timelam", dtLamviec.Value.ToString("dd/mm/yyyy").Trim()));
-                        cmd.Parameters.Add(new SqlParameter("@timenghi", dtThoiviec.Value.ToString("dd/mm/yyyy").Trim()));
+                        cmd.Parameters.Add(new SqlParameter("@timelam", timelam.Trim()));
+                        cmd.Parameters.Add(new SqlParameter("@timenghi", timenghi.Trim()));
                         cmd.ExecuteNonQuery();
-
                         con.Close();
                         MessageBox.Show("Sửa thông tin nhân viên thành công!");
-                        this.Close();
+                        xoa_textBox();
+                        load();
                     }
                     catch { MessageBox.Show("Không thành công! Vui lòng kiểm tra lại!"); }
             }
@@ -91,7 +121,7 @@ namespace QuanlyKS
                     try
                     {
                         con.Open();
-                        string add_NV = "insert into NhanVien values(@manv,@tennv,@gioitinh,@ngaysinh,@cmnd,@sdt,@chucvu,@diachi,luong,@timelam,@timenghi)";
+                        string add_NV = "insert into NhanVien values(@manv,@tennv,@gioitinh,@ngaysinh,@cmnd,@sdt,@chucvu,@diachi,@luong,@timelam,@timenghi)";
                         SqlCommand cmd = new SqlCommand(add_NV, con);
                         cmd.CommandType = CommandType.Text;
                         cmd.Parameters.Add(new SqlParameter("@manv", txtMaNV.Text.Trim()));
@@ -106,10 +136,10 @@ namespace QuanlyKS
                         cmd.Parameters.Add(new SqlParameter("@timelam", timelam.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@timenghi", timenghi.Trim()));
                         cmd.ExecuteNonQuery();
-
                         con.Close();
                         MessageBox.Show("Thêm nhân viên thành công!");
-                        this.Close();
+                        xoa_textBox();
+                        load();
                     }
                     catch { MessageBox.Show("Không thành công! Vui lòng kiểm tra lại!"); }
             }
@@ -117,6 +147,7 @@ namespace QuanlyKS
 
         private void xoa_textBox()
         {
+            txtMaNV.Text = null;
             txtTenNV.Text = null;
             cbbGTinh.Text = null;
             txtCMND.Text = null;
@@ -142,6 +173,7 @@ namespace QuanlyKS
 
         private void btEdit_Click(object sender, EventArgs e)
         {
+            PanTool.Visible = false;
             PanXacnhan.Visible = true;
             txtTenNV.ReadOnly = false;
             cbbGTinh.Enabled = true;
@@ -169,24 +201,19 @@ namespace QuanlyKS
                 {
                     con.Open();
                     curRow = this.data_DSNV.CurrentRow.Index;
-                    this.manv = this.data_DSNV.Rows[curRow].Cells[0].Value.ToString();
-                    string select = "select * from Nhanvien when maNV =" + this.manv ;
-                    SqlCommand com = new SqlCommand(select, con);
-                    com.CommandType = CommandType.Text;
-                    SqlDataAdapter da = new SqlDataAdapter(com);
-                    DataTable dt = new DataTable();
-                    txtMaNV.Text = "maNV";
-                    txtTenNV.Text = "tenNV";
-                    cbbGTinh.SelectedValue = "gioiTinh";
-                    txtCMND.Text = "cmnd";
-                    txtSDT.Text = "sdt";
-                    txtDiaChi.Text = "diaChi";
-                    cbbChucVu.SelectedValue = "chucVu";
-                    dtNgaySinh.Text = "ngaySinh";
-                    txtLuong.Text = "luong";
-                    dtLamviec.Text = "timeLam";
-                    dtThoiviec.Text = "timeNghi";
+                    txtMaNV.Text = this.data_DSNV.Rows[curRow].Cells[0].Value.ToString();
+                    txtTenNV.Text = this.data_DSNV.Rows[curRow].Cells[1].Value.ToString();
+                    cbbGTinh.Text = this.data_DSNV.Rows[curRow].Cells[2].Value.ToString();
+                   // dtNgaySinh.Text = Convert.ToDateTime(data_DSNV.Rows[curRow].Cells[3].Value).ToString();
+                    txtCMND.Text = this.data_DSNV.Rows[curRow].Cells[4].Value.ToString();
+                    txtSDT.Text = this.data_DSNV.Rows[curRow].Cells[5].Value.ToString();
+                    cbbChucVu.Text = this.data_DSNV.Rows[curRow].Cells[6].Value.ToString();
+                    txtDiaChi.Text = this.data_DSNV.Rows[curRow].Cells[7].Value.ToString();
+                    txtLuong.Text = this.data_DSNV.Rows[curRow].Cells[8].Value.ToString();
+                   // dtNgaySinh.Text = Convert.ToDateTime(this.data_DSNV.Rows[curRow].Cells[9].Value).ToString();
+                   // dtNgaySinh.Text = Convert.ToDateTime(this.data_DSNV.Rows[curRow].Cells[10].Value).ToString();
                     con.Close();
+
                 }
                 catch
                 { }
@@ -195,7 +222,7 @@ namespace QuanlyKS
         private void load()
         {
             con.Open();
-            string sql = "select maNV,tenNV,gioiTinh,ngaySinh,cmnd,sdt,chucVu from NhanVien";
+            string sql = "select * from NhanVien";
             SqlCommand ds = new SqlCommand(sql, con);
             ds.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(ds);
@@ -215,6 +242,7 @@ namespace QuanlyKS
             dtLamviec.Enabled = false;
             dtThoiviec.Enabled = false;
             PanXacnhan.Visible = false;
+            PanTool.Visible = true;
         }
 
     }

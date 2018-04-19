@@ -29,26 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaPh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiPh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_dp = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txttinhtrang = new System.Windows.Forms.TextBox();
+            this.txttimenhan = new System.Windows.Forms.TextBox();
+            this.txttime = new System.Windows.Forms.TextBox();
+            this.txtsdt = new System.Windows.Forms.TextBox();
+            this.txtcmnd = new System.Windows.Forms.TextBox();
+            this.txtten = new System.Windows.Forms.TextBox();
+            this.txtSGiuong = new System.Windows.Forms.TextBox();
+            this.txtloai = new System.Windows.Forms.TextBox();
+            this.txtMaph = new System.Windows.Forms.TextBox();
+            this.bthuy = new System.Windows.Forms.Button();
+            this.btnhan = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,13 +53,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_dp)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.data_dp);
             this.groupBox1.Location = new System.Drawing.Point(14, 225);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(634, 239);
@@ -74,84 +67,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách đặt phòng:";
             // 
-            // dataGridView1
+            // data_dp
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaPh,
-            this.LoaiPh,
-            this.TenDP,
-            this.CMND,
-            this.SDT,
-            this.TimeDP,
-            this.TinhTrang});
-            this.dataGridView1.Location = new System.Drawing.Point(14, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(614, 207);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // MaPh
-            // 
-            this.MaPh.HeaderText = "Mã phòng";
-            this.MaPh.Name = "MaPh";
-            this.MaPh.ReadOnly = true;
-            this.MaPh.Width = 70;
-            // 
-            // LoaiPh
-            // 
-            this.LoaiPh.HeaderText = "Loại phòng";
-            this.LoaiPh.Name = "LoaiPh";
-            this.LoaiPh.ReadOnly = true;
-            this.LoaiPh.Width = 70;
-            // 
-            // TenDP
-            // 
-            this.TenDP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenDP.HeaderText = "Tên người đặt";
-            this.TenDP.Name = "TenDP";
-            this.TenDP.ReadOnly = true;
-            // 
-            // CMND
-            // 
-            this.CMND.HeaderText = "CMND";
-            this.CMND.Name = "CMND";
-            this.CMND.ReadOnly = true;
-            this.CMND.Width = 70;
-            // 
-            // SDT
-            // 
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            this.SDT.Width = 70;
-            // 
-            // TimeDP
-            // 
-            this.TimeDP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TimeDP.HeaderText = "Thời gian đặt phòng";
-            this.TimeDP.Name = "TimeDP";
-            this.TimeDP.ReadOnly = true;
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.HeaderText = "Tình trạng";
-            this.TinhTrang.Name = "TinhTrang";
-            this.TinhTrang.ReadOnly = true;
-            this.TinhTrang.Width = 70;
+            this.data_dp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_dp.Location = new System.Drawing.Point(14, 20);
+            this.data_dp.Name = "data_dp";
+            this.data_dp.Size = new System.Drawing.Size(614, 207);
+            this.data_dp.TabIndex = 0;
+            this.data_dp.MouseClick += new System.Windows.Forms.MouseEventHandler(this.data_dp_MouseClick_1);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.txttinhtrang);
+            this.groupBox2.Controls.Add(this.txttimenhan);
+            this.groupBox2.Controls.Add(this.txttime);
+            this.groupBox2.Controls.Add(this.txtsdt);
+            this.groupBox2.Controls.Add(this.txtcmnd);
+            this.groupBox2.Controls.Add(this.txtten);
+            this.groupBox2.Controls.Add(this.txtSGiuong);
+            this.groupBox2.Controls.Add(this.txtloai);
+            this.groupBox2.Controls.Add(this.txtMaph);
+            this.groupBox2.Controls.Add(this.bthuy);
+            this.groupBox2.Controls.Add(this.btnhan);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
@@ -168,99 +105,101 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin đặt phòng:";
             // 
-            // textBox9
+            // txttinhtrang
             // 
-            this.textBox9.Location = new System.Drawing.Point(389, 136);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(217, 20);
-            this.textBox9.TabIndex = 19;
+            this.txttinhtrang.Location = new System.Drawing.Point(389, 136);
+            this.txttinhtrang.Name = "txttinhtrang";
+            this.txttinhtrang.ReadOnly = true;
+            this.txttinhtrang.Size = new System.Drawing.Size(217, 20);
+            this.txttinhtrang.TabIndex = 19;
             // 
-            // textBox8
+            // txttimenhan
             // 
-            this.textBox8.Location = new System.Drawing.Point(450, 104);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(156, 20);
-            this.textBox8.TabIndex = 18;
+            this.txttimenhan.Location = new System.Drawing.Point(450, 104);
+            this.txttimenhan.Name = "txttimenhan";
+            this.txttimenhan.ReadOnly = true;
+            this.txttimenhan.Size = new System.Drawing.Size(156, 20);
+            this.txttimenhan.TabIndex = 18;
             // 
-            // textBox7
+            // txttime
             // 
-            this.textBox7.Location = new System.Drawing.Point(123, 104);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(127, 20);
-            this.textBox7.TabIndex = 17;
+            this.txttime.Location = new System.Drawing.Point(123, 104);
+            this.txttime.Name = "txttime";
+            this.txttime.ReadOnly = true;
+            this.txttime.Size = new System.Drawing.Size(127, 20);
+            this.txttime.TabIndex = 17;
             // 
-            // textBox6
+            // txtsdt
             // 
-            this.textBox6.Location = new System.Drawing.Point(413, 74);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(193, 20);
-            this.textBox6.TabIndex = 16;
+            this.txtsdt.Location = new System.Drawing.Point(413, 74);
+            this.txtsdt.Name = "txtsdt";
+            this.txtsdt.ReadOnly = true;
+            this.txtsdt.Size = new System.Drawing.Size(193, 20);
+            this.txtsdt.TabIndex = 16;
             // 
-            // textBox5
+            // txtcmnd
             // 
-            this.textBox5.Location = new System.Drawing.Point(413, 48);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(193, 20);
-            this.textBox5.TabIndex = 15;
+            this.txtcmnd.Location = new System.Drawing.Point(413, 48);
+            this.txtcmnd.Name = "txtcmnd";
+            this.txtcmnd.ReadOnly = true;
+            this.txtcmnd.Size = new System.Drawing.Size(193, 20);
+            this.txtcmnd.TabIndex = 15;
             // 
-            // textBox4
+            // txtten
             // 
-            this.textBox4.Location = new System.Drawing.Point(413, 22);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(193, 20);
-            this.textBox4.TabIndex = 14;
+            this.txtten.Location = new System.Drawing.Point(413, 22);
+            this.txtten.Name = "txtten";
+            this.txtten.ReadOnly = true;
+            this.txtten.Size = new System.Drawing.Size(193, 20);
+            this.txtten.TabIndex = 14;
             // 
-            // textBox3
+            // txtSGiuong
             // 
-            this.textBox3.Location = new System.Drawing.Point(75, 74);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(175, 20);
-            this.textBox3.TabIndex = 13;
+            this.txtSGiuong.Location = new System.Drawing.Point(75, 74);
+            this.txtSGiuong.Name = "txtSGiuong";
+            this.txtSGiuong.ReadOnly = true;
+            this.txtSGiuong.Size = new System.Drawing.Size(175, 20);
+            this.txtSGiuong.TabIndex = 13;
             // 
-            // textBox2
+            // txtloai
             // 
-            this.textBox2.Location = new System.Drawing.Point(75, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(175, 20);
-            this.textBox2.TabIndex = 12;
+            this.txtloai.Location = new System.Drawing.Point(75, 48);
+            this.txtloai.Name = "txtloai";
+            this.txtloai.ReadOnly = true;
+            this.txtloai.Size = new System.Drawing.Size(175, 20);
+            this.txtloai.TabIndex = 12;
             // 
-            // textBox1
+            // txtMaph
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtMaph.Location = new System.Drawing.Point(75, 22);
+            this.txtMaph.Name = "txtMaph";
+            this.txtMaph.ReadOnly = true;
+            this.txtMaph.Size = new System.Drawing.Size(175, 20);
+            this.txtMaph.TabIndex = 11;
             // 
-            // button2
+            // bthuy
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(413, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 33);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Hủy đặt phòng";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.bthuy.BackColor = System.Drawing.Color.Red;
+            this.bthuy.Enabled = false;
+            this.bthuy.Location = new System.Drawing.Point(413, 162);
+            this.bthuy.Name = "bthuy";
+            this.bthuy.Size = new System.Drawing.Size(98, 33);
+            this.bthuy.TabIndex = 10;
+            this.bthuy.Text = "Hủy đặt phòng";
+            this.bthuy.UseVisualStyleBackColor = false;
+            this.bthuy.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnhan
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.Location = new System.Drawing.Point(518, 162);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 33);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Nhận phòng";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnhan.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnhan.Enabled = false;
+            this.btnhan.Location = new System.Drawing.Point(518, 162);
+            this.btnhan.Name = "btnhan";
+            this.btnhan.Size = new System.Drawing.Size(91, 33);
+            this.btnhan.TabIndex = 9;
+            this.btnhan.Text = "Nhận phòng";
+            this.btnhan.UseVisualStyleBackColor = false;
+            this.btnhan.Click += new System.EventHandler(this.button1_Click);
             // 
             // label9
             // 
@@ -363,8 +302,9 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "QuanlyDP";
             this.Text = "Quản Lý Đặt Phòng";
+            this.Load += new System.EventHandler(this.QuanlyDP_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_dp)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -374,7 +314,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView data_dp;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -384,25 +324,18 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txttinhtrang;
+        private System.Windows.Forms.TextBox txttimenhan;
+        private System.Windows.Forms.TextBox txttime;
+        private System.Windows.Forms.TextBox txtsdt;
+        private System.Windows.Forms.TextBox txtcmnd;
+        private System.Windows.Forms.TextBox txtten;
+        private System.Windows.Forms.TextBox txtSGiuong;
+        private System.Windows.Forms.TextBox txtloai;
+        private System.Windows.Forms.TextBox txtMaph;
+        private System.Windows.Forms.Button bthuy;
+        private System.Windows.Forms.Button btnhan;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiPh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeDP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
         private System.Windows.Forms.Button button3;
     }
 }

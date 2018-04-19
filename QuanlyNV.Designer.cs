@@ -110,6 +110,7 @@
             this.btXoa.Size = new System.Drawing.Size(20, 20);
             this.btXoa.TabIndex = 11;
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // PanXacnhan
             // 
@@ -157,7 +158,7 @@
             this.cbbGTinh.FormattingEnabled = true;
             this.cbbGTinh.Items.AddRange(new object[] {
             "Nam",
-            "Nữ"});
+            "Nu"});
             this.cbbGTinh.Location = new System.Drawing.Point(62, 78);
             this.cbbGTinh.Name = "cbbGTinh";
             this.cbbGTinh.Size = new System.Drawing.Size(175, 21);
@@ -292,6 +293,8 @@
             // 
             // dtThoiviec
             // 
+            this.dtThoiviec.CustomFormat = "yyyy-MM-dd";
+            this.dtThoiviec.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtThoiviec.Location = new System.Drawing.Point(402, 109);
             this.dtThoiviec.Name = "dtThoiviec";
             this.dtThoiviec.Size = new System.Drawing.Size(161, 20);
@@ -343,6 +346,8 @@
             // 
             // dtLamviec
             // 
+            this.dtLamviec.CustomFormat = "yyyy-MM-dd";
+            this.dtLamviec.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtLamviec.Location = new System.Drawing.Point(402, 83);
             this.dtLamviec.Name = "dtLamviec";
             this.dtLamviec.Size = new System.Drawing.Size(161, 20);
@@ -359,6 +364,8 @@
             // 
             // dtNgaySinh
             // 
+            this.dtNgaySinh.CustomFormat = "yyyy-MM-dd";
+            this.dtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgaySinh.Location = new System.Drawing.Point(62, 105);
             this.dtNgaySinh.Name = "dtNgaySinh";
             this.dtNgaySinh.Size = new System.Drawing.Size(175, 20);
@@ -369,8 +376,8 @@
             this.cbbChucVu.Enabled = false;
             this.cbbChucVu.FormattingEnabled = true;
             this.cbbChucVu.Items.AddRange(new object[] {
-            "Thu ngân",
-            "Tạp vụ"});
+            "Thu ngan",
+            "Tap vu"});
             this.cbbChucVu.Location = new System.Drawing.Point(402, 49);
             this.cbbChucVu.Name = "cbbChucVu";
             this.cbbChucVu.Size = new System.Drawing.Size(131, 21);
@@ -393,7 +400,7 @@
             this.data_DSNV.Name = "data_DSNV";
             this.data_DSNV.Size = new System.Drawing.Size(635, 216);
             this.data_DSNV.TabIndex = 0;
-            this.data_DSNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_DSNV_CellContentClick);
+            this.data_DSNV.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.data_DSNV_CellContentClick);
             // 
             // groupBox1
             // 

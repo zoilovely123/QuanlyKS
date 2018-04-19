@@ -22,6 +22,7 @@ namespace QuanlyKS
         private void btQuaylai_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
         SqlConnection con = DBconnecter.sqlConnector();
 
@@ -76,7 +77,15 @@ namespace QuanlyKS
 
         }
 
+        public void clearGb()
+        {
+            txtSoGiuong.Text = null;
+            txtDonGia.Text = null;
+            txtMaPh.Text = null;
+            cbbTinhtrang.Text = null;
+            cbbLoaiPh.Text = null;
 
+        }
         public void loadGbTTCT()
         {
             con.Open();
@@ -91,15 +100,11 @@ namespace QuanlyKS
             PanXacnhan.Visible = false;
             PanTool.Visible = true;
             txtSoGiuong.ReadOnly = true;
-            txtSoGiuong.Text = null;
             txtDonGia.ReadOnly = true;
-            txtDonGia.Text = null;
             cbbLoaiPh.Enabled = false;
             txtMaPh.ReadOnly = true;
-            txtMaPh.Text = null;
             cbbTinhtrang.Enabled = false;
-            cbbTinhtrang.Text = null;
-            cbbLoaiPh.Text = null;
+            clearGb();
         }
 
 
@@ -116,6 +121,7 @@ namespace QuanlyKS
             txtMaPh.ReadOnly = false;
             cbbLoaiPh.Enabled = true;
             cbbTinhtrang.Enabled = true;
+            clearGb();
         }
 
         private void btEdit_Click_1(object sender, EventArgs e)
