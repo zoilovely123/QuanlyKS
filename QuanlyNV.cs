@@ -30,6 +30,7 @@ namespace QuanlyKS
 
         private void btAdd_Click(object sender, EventArgs e)
         {
+            
             PanTool.Visible = false;
             txtMaNV.ReadOnly = false;
             txtTenNV.ReadOnly = false;
@@ -56,6 +57,21 @@ namespace QuanlyKS
         private void data_DSNV_CellContentClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             loadToTextBox(true);
+        }
+
+        private void dtNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+            dtNgaySinh.CustomFormat = "dd/MM/yyyy";
+        }
+
+        private void dtLamviec_ValueChanged(object sender, EventArgs e)
+        {
+            dtLamviec.CustomFormat = "dd/MM/yyyy";
+        }
+
+        private void dtThoiviec_ValueChanged(object sender, EventArgs e)
+        {
+            dtThoiviec.CustomFormat = "dd/MM/yyyy";
         }
 
         private void btXoa_Click(object sender, EventArgs e)
@@ -154,10 +170,10 @@ namespace QuanlyKS
             txtSDT.Text = null;
             txtDiaChi.Text = null;
             cbbChucVu.Text = null;
-            dtNgaySinh.Value = DateTime.Now;
             txtLuong.Text = null;
-            dtLamviec.Value = DateTime.Now;
-            dtThoiviec.Value = DateTime.Now;
+            dtThoiviec.CustomFormat = "None";
+            dtNgaySinh.CustomFormat = "None";
+            dtLamviec.CustomFormat = "None";
         }
         private void data_DSNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -188,9 +204,6 @@ namespace QuanlyKS
             id = true;
         }
 
-        private float soluong;
-
-
 
         private void loadToTextBox(Boolean check)
         {
@@ -204,14 +217,14 @@ namespace QuanlyKS
                     txtMaNV.Text = this.data_DSNV.Rows[curRow].Cells[0].Value.ToString();
                     txtTenNV.Text = this.data_DSNV.Rows[curRow].Cells[1].Value.ToString();
                     cbbGTinh.Text = this.data_DSNV.Rows[curRow].Cells[2].Value.ToString();
-                   // dtNgaySinh.Text = Convert.ToDateTime(data_DSNV.Rows[curRow].Cells[3].Value).ToString();
+                    dtNgaySinh.CustomFormat = this.data_DSNV.Rows[curRow].Cells[3].Value.ToString(); 
                     txtCMND.Text = this.data_DSNV.Rows[curRow].Cells[4].Value.ToString();
                     txtSDT.Text = this.data_DSNV.Rows[curRow].Cells[5].Value.ToString();
                     cbbChucVu.Text = this.data_DSNV.Rows[curRow].Cells[6].Value.ToString();
                     txtDiaChi.Text = this.data_DSNV.Rows[curRow].Cells[7].Value.ToString();
                     txtLuong.Text = this.data_DSNV.Rows[curRow].Cells[8].Value.ToString();
-                   // dtNgaySinh.Text = Convert.ToDateTime(this.data_DSNV.Rows[curRow].Cells[9].Value).ToString();
-                   // dtNgaySinh.Text = Convert.ToDateTime(this.data_DSNV.Rows[curRow].Cells[10].Value).ToString();
+                    dtLamviec.CustomFormat = this.data_DSNV.Rows[curRow].Cells[9].Value.ToString();
+                    dtThoiviec.CustomFormat = this.data_DSNV.Rows[curRow].Cells[10].Value.ToString();
                     con.Close();
 
                 }
@@ -222,7 +235,7 @@ namespace QuanlyKS
         private void load()
         {
             con.Open();
-            string sql = "select * from NhanVien";
+            string sql = "select MaNV,TenNV,GioiTinh,NgaySinh=CONVERT (nvarchar,NgaySinh, 103),CMND,SDT,ChucVu,DiaChi,Luong,ThoiGianVaoLam=convert(varchar,ThoiGianVaoLam, 103),ThoiGianNghi=convert(varchar, ThoiGianNghi, 103) from NhanVien";
             SqlCommand ds = new SqlCommand(sql, con);
             ds.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(ds);
@@ -241,6 +254,9 @@ namespace QuanlyKS
             txtLuong.ReadOnly = true;
             dtLamviec.Enabled = false;
             dtThoiviec.Enabled = false;
+            dtThoiviec.CustomFormat = "None";
+            dtNgaySinh.CustomFormat = "None";
+            dtLamviec.CustomFormat = "None";
             PanXacnhan.Visible = false;
             PanTool.Visible = true;
         }

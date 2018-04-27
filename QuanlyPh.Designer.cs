@@ -50,6 +50,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.MaP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sogiuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tinhtrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_DSPh)).BeginInit();
             this.gbTTCT.SuspendLayout();
@@ -69,9 +74,18 @@
             // 
             // data_DSPh
             // 
+            this.data_DSPh.AllowUserToAddRows = false;
+            this.data_DSPh.AllowUserToDeleteRows = false;
             this.data_DSPh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_DSPh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaP,
+            this.loai,
+            this.donGia,
+            this.sogiuong,
+            this.tinhtrang});
             this.data_DSPh.Location = new System.Drawing.Point(6, 19);
             this.data_DSPh.Name = "data_DSPh";
+            this.data_DSPh.ReadOnly = true;
             this.data_DSPh.Size = new System.Drawing.Size(542, 272);
             this.data_DSPh.TabIndex = 0;
             this.data_DSPh.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.data_DSPh_CellContentClick);
@@ -285,6 +299,36 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã phòng:";
             // 
+            // MaP
+            // 
+            this.MaP.DataPropertyName = "maPh";
+            this.MaP.HeaderText = "Ma Phong";
+            this.MaP.Name = "MaP";
+            // 
+            // loai
+            // 
+            this.loai.DataPropertyName = "loai";
+            this.loai.HeaderText = "Loai";
+            this.loai.Name = "loai";
+            // 
+            // donGia
+            // 
+            this.donGia.DataPropertyName = "donGia";
+            this.donGia.HeaderText = "Don gia";
+            this.donGia.Name = "donGia";
+            // 
+            // sogiuong
+            // 
+            this.sogiuong.DataPropertyName = "soGiuong";
+            this.sogiuong.HeaderText = "So giuong";
+            this.sogiuong.Name = "sogiuong";
+            // 
+            // tinhtrang
+            // 
+            this.tinhtrang.DataPropertyName = "tinhTrang";
+            this.tinhtrang.HeaderText = "Tinh trang";
+            this.tinhtrang.Name = "tinhtrang";
+            // 
             // QuanlyPh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,5 +374,10 @@
         private System.Windows.Forms.Button btEdit;
         private System.Windows.Forms.FlowLayoutPanel PanTool;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sogiuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tinhtrang;
     }
 }

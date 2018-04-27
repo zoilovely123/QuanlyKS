@@ -299,6 +299,7 @@
             this.dtThoiviec.Name = "dtThoiviec";
             this.dtThoiviec.Size = new System.Drawing.Size(161, 20);
             this.dtThoiviec.TabIndex = 24;
+            this.dtThoiviec.ValueChanged += new System.EventHandler(this.dtThoiviec_ValueChanged);
             // 
             // label7
             // 
@@ -352,6 +353,7 @@
             this.dtLamviec.Name = "dtLamviec";
             this.dtLamviec.Size = new System.Drawing.Size(161, 20);
             this.dtLamviec.TabIndex = 18;
+            this.dtLamviec.ValueChanged += new System.EventHandler(this.dtLamviec_ValueChanged);
             // 
             // label1
             // 
@@ -370,6 +372,7 @@
             this.dtNgaySinh.Name = "dtNgaySinh";
             this.dtNgaySinh.Size = new System.Drawing.Size(175, 20);
             this.dtNgaySinh.TabIndex = 16;
+            this.dtNgaySinh.ValueChanged += new System.EventHandler(this.dtNgaySinh_ValueChanged);
             // 
             // cbbChucVu
             // 

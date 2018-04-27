@@ -23,8 +23,9 @@ namespace QuanlyKS
             get { return tendangnhap; }
             set { tendangnhap = value; }
         }
-        SqlConnection con = DBconnecter.sqlConnector();
 
+       
+        SqlConnection con = DBconnecter.sqlConnector();
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -41,8 +42,32 @@ namespace QuanlyKS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string timegd = timeGD.Value.ToString("yyyy/MM/dd hh:mm:ss");
             if (MessageBox.Show("Xác nhận thuê phòng!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
+                string matp;
+                matp = timeGD.Value.ToString("ddMMhhmmss");
+                con.Open();
+                string add_TP = "insert into ThuePhong values(@maTPh,@maPh,@tenThue,@cmnd,@sdt,@timeNPh,NULL,NULL,@tinhtrang)";
+                SqlCommand cmd = new SqlCommand(add_TP, con);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("@maTPh", matp.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@maPh", txtMaph.Text.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@tenThue", txtTen.Text.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@cmnd", txtCMND.Text.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@sdt", txtSDT.Text.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@timeNPh", timegd.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@tinhtrang", "New"));
+                cmd.ExecuteNonQuery();
+                string update_Ph = "update Phong set tinhTrang=@tinhtrang where maPh=@maPh";
+                SqlCommand cm = new SqlCommand(update_Ph, con);
+                cm.CommandType = CommandType.Text;
+                cm.Parameters.Add(new SqlParameter("@maPh", txtMaph.Text.Trim()));
+                cm.Parameters.Add(new SqlParameter("@tinhtrang", "Used"));
+                cm.ExecuteNonQuery();
+                con.Close();
+                re_load();
+                load();
                 MessageBox.Show("Thuê phòng thành công!");
             }
         }
@@ -106,9 +131,11 @@ namespace QuanlyKS
                     try
                     {
                         string madp;
-                        madp = timeGD.Value.ToString("ddMMhhmmss");
+                        madp = timeGD.Value.ToString("ddMMyyyyhhmmss");
+                        string timegd;
+                        timegd = timeGD.Value.ToString("yyyy/MM/dd hh:mm:ss");
                         con.Open();
-                        string add_DP = "insert into DatPhong values(@maDPh,@maPh,@tenDat,@cmnd,@sdt,NULL,@tinhtrang)";
+                        string add_DP = "insert into DatPhong values(@maDPh,@maPh,@tenDat,@cmnd,@sdt,@timeDP,NULL,@tinhtrang)";
                         SqlCommand cmd = new SqlCommand(add_DP, con);
                         cmd.CommandType = CommandType.Text;
                         cmd.Parameters.Add(new SqlParameter("@maDPh", madp.Trim()));
@@ -116,6 +143,7 @@ namespace QuanlyKS
                         cmd.Parameters.Add(new SqlParameter("@tenDat", txtTen.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@cmnd", txtCMND.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@sdt", txtSDT.Text.Trim()));
+                        cmd.Parameters.Add(new SqlParameter("@timeDP", timegd.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@tinhtrang", "Wait"));
                         cmd.ExecuteNonQuery();
                         string update_Ph = "update Phong set tinhTrang=@tinhtrang where maPh=@maPh";
@@ -142,6 +170,9 @@ namespace QuanlyKS
             txtCMND.Text = null;
             txtSDT.ReadOnly = true;
             txtTen.ReadOnly = true;
+            btDat.Enabled = false;
+            btThue.Enabled = false;
+            btTra.Enabled = false;
         }
         public void load()
         {
@@ -159,6 +190,7 @@ namespace QuanlyKS
         public string tinhtrang;
         private void dt_DSP_MouseClick(object sender, MouseEventArgs e)
         {
+            re_load();
             load_toTB(true);
             if (tinhtrang=="Null")
             {
@@ -168,10 +200,12 @@ namespace QuanlyKS
                 txtTen.Text = null;
                 txtSDT.Text = null;
                 txtCMND.Text = null;
+                btThue.Enabled = btDat.Enabled = true;
             }
             else
             {
-                re_load();
+                if (tinhtrang == "Used") { btTra.Enabled = true; }
+                else re_load();
             }
         }
         public void load_toTB(Boolean check)
@@ -188,7 +222,7 @@ namespace QuanlyKS
                     txtSGiuong.Text = this.dt_DSP.Rows[curRow].Cells[3].Value.ToString();
                     tinhtrang = this.dt_DSP.Rows[curRow].Cells[4].Value.ToString();
                     con.Close();
-
+                    
                 }
                 catch
                 { }
@@ -214,5 +248,31 @@ namespace QuanlyKS
 
             }
         }
-    }
+
+        private void CTHoaDon_formclosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+            load();
+        }
+        private void btTra_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CTHoaDon quanly = new CTHoaDon();
+            quanly.FormClosed += new FormClosedEventHandler(CTHoaDon_formclosed);
+            quanly.MaPhong =txtMaph.Text.ToString();
+            quanly.Show();
+        }
+        private void quanlyDV_formclose(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+            load();
+        }
+        private void quảnLýDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            QuanlyDV quanly = new QuanlyDV();
+            quanly.FormClosed += new FormClosedEventHandler(quanlyDV_formclose);
+            quanly.Show();
+        }
+    }   
 }

@@ -31,11 +31,11 @@
             this.dt_DSP = new System.Windows.Forms.DataGridView();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btDat = new System.Windows.Forms.Button();
             this.timeGD = new System.Windows.Forms.DateTimePicker();
             this.txtSDT = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btTra = new System.Windows.Forms.Button();
+            this.btThue = new System.Windows.Forms.Button();
             this.txtCMND = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtSGiuong = new System.Windows.Forms.TextBox();
@@ -57,6 +57,7 @@
             this.quanLyĐătPhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanlyPh = new System.Windows.Forms.ToolStripMenuItem();
             this.quanlyNV = new System.Windows.Forms.ToolStripMenuItem();
+            this.quanlyDV = new System.Windows.Forms.ToolStripMenuItem();
             this.thongke = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dt_DSP)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -67,9 +68,10 @@
             // dt_DSP
             // 
             this.dt_DSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dt_DSP.Location = new System.Drawing.Point(6, 22);
+            this.dt_DSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dt_DSP.Location = new System.Drawing.Point(3, 16);
             this.dt_DSP.Name = "dt_DSP";
-            this.dt_DSP.Size = new System.Drawing.Size(469, 264);
+            this.dt_DSP.Size = new System.Drawing.Size(479, 278);
             this.dt_DSP.TabIndex = 0;
             this.dt_DSP.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dt_DSP_MouseClick);
             // 
@@ -86,11 +88,11 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btDat);
             this.groupBox2.Controls.Add(this.timeGD);
             this.groupBox2.Controls.Add(this.txtSDT);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btTra);
+            this.groupBox2.Controls.Add(this.btThue);
             this.groupBox2.Controls.Add(this.txtCMND);
             this.groupBox2.Controls.Add(this.txtTen);
             this.groupBox2.Controls.Add(this.txtSGiuong);
@@ -110,16 +112,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin thuê phòng:";
             // 
-            // button3
+            // btDat
             // 
-            this.button3.BackColor = System.Drawing.Color.LightBlue;
-            this.button3.Location = new System.Drawing.Point(99, 259);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 27);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Đặt phòng";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btDat.BackColor = System.Drawing.Color.LightBlue;
+            this.btDat.Location = new System.Drawing.Point(99, 259);
+            this.btDat.Name = "btDat";
+            this.btDat.Size = new System.Drawing.Size(75, 27);
+            this.btDat.TabIndex = 18;
+            this.btDat.Text = "Đặt phòng";
+            this.btDat.UseVisualStyleBackColor = false;
+            this.btDat.Click += new System.EventHandler(this.button3_Click);
             // 
             // timeGD
             // 
@@ -139,26 +141,27 @@
             this.txtSDT.Size = new System.Drawing.Size(168, 20);
             this.txtSDT.TabIndex = 16;
             // 
-            // button2
+            // btTra
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkSalmon;
-            this.button2.Location = new System.Drawing.Point(6, 259);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Trả phòng";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btTra.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btTra.Location = new System.Drawing.Point(6, 259);
+            this.btTra.Name = "btTra";
+            this.btTra.Size = new System.Drawing.Size(75, 27);
+            this.btTra.TabIndex = 10;
+            this.btTra.Text = "Trả phòng";
+            this.btTra.UseVisualStyleBackColor = false;
+            this.btTra.Click += new System.EventHandler(this.btTra_Click);
             // 
-            // button1
+            // btThue
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(192, 259);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Thuê phòng";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btThue.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btThue.Location = new System.Drawing.Point(192, 259);
+            this.btThue.Name = "btThue";
+            this.btThue.Size = new System.Drawing.Size(75, 27);
+            this.btThue.TabIndex = 9;
+            this.btThue.Text = "Thuê phòng";
+            this.btThue.UseVisualStyleBackColor = false;
+            this.btThue.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtCMND
             // 
@@ -322,6 +325,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quanLyĐătPhongToolStripMenuItem,
+            this.quanlyDV,
             this.quanlyPh,
             this.quanlyNV,
             this.thongke});
@@ -351,6 +355,13 @@
             this.quanlyNV.Size = new System.Drawing.Size(115, 20);
             this.quanlyNV.Text = "Quản lý nhân viên";
             this.quanlyNV.Click += new System.EventHandler(this.quanlyNV_Click);
+            // 
+            // quanlyDV
+            // 
+            this.quanlyDV.Name = "quanlyDV";
+            this.quanlyDV.Size = new System.Drawing.Size(102, 20);
+            this.quanlyDV.Text = "Quản lý dịch vụ";
+            this.quanlyDV.Click += new System.EventHandler(this.quảnLýDịchVụToolStripMenuItem_Click);
             // 
             // thongke
             // 
@@ -395,8 +406,8 @@
         private System.Windows.Forms.TextBox txtSGiuong;
         private System.Windows.Forms.TextBox txtLoai;
         private System.Windows.Forms.TextBox txtMaph;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btTra;
+        private System.Windows.Forms.Button btThue;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -415,7 +426,8 @@
         private System.Windows.Forms.ToolStripMenuItem quanlyNV;
         private System.Windows.Forms.ToolStripMenuItem thongke;
         private System.Windows.Forms.DateTimePicker timeGD;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btDat;
+        private System.Windows.Forms.ToolStripMenuItem quanlyDV;
     }
 }
 

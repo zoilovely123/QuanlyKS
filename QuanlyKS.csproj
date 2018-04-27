@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CTHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CTHoaDon.Designer.cs">
+      <DependentUpon>CTHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dangnhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     </Compile>
     <Compile Include="QuanlyDP.Designer.cs">
       <DependentUpon>QuanlyDP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlyDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanlyDV.Designer.cs">
+      <DependentUpon>QuanlyDV.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanlyNV.cs">
       <SubType>Form</SubType>
@@ -79,11 +91,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CTHoaDon.resx">
+      <DependentUpon>CTHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dangnhap.resx">
       <DependentUpon>Dangnhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanlyDP.resx">
       <DependentUpon>QuanlyDP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanlyDV.resx">
+      <DependentUpon>QuanlyDV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanlyNV.resx">
       <DependentUpon>QuanlyNV.cs</DependentUpon>
@@ -125,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_add-circle-outline_326501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -52,6 +52,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.cbSear = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_dp)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -60,7 +62,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.data_dp);
-            this.groupBox1.Location = new System.Drawing.Point(14, 225);
+            this.groupBox1.Location = new System.Drawing.Point(14, 259);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(634, 239);
             this.groupBox1.TabIndex = 0;
@@ -284,7 +286,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 470);
+            this.button3.Location = new System.Drawing.Point(14, 504);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 20;
@@ -292,11 +294,37 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // cbSear
+            // 
+            this.cbSear.FormattingEnabled = true;
+            this.cbSear.Items.AddRange(new object[] {
+            "All",
+            "Wait",
+            "Used",
+            "Close"});
+            this.cbSear.Location = new System.Drawing.Point(519, 232);
+            this.cbSear.Name = "cbSear";
+            this.cbSear.Size = new System.Drawing.Size(121, 21);
+            this.cbSear.TabIndex = 22;
+            this.cbSear.Text = "All";
+            this.cbSear.SelectedValueChanged += new System.EventHandler(this.cbSear_SelectedValueChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(447, 235);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Tình trạng:";
+            // 
             // QuanlyDP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 498);
+            this.ClientSize = new System.Drawing.Size(660, 535);
+            this.Controls.Add(this.cbSear);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -308,6 +336,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -337,5 +366,7 @@
         private System.Windows.Forms.Button btnhan;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cbSear;
+        private System.Windows.Forms.Label label10;
     }
 }
