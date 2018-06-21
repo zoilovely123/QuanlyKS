@@ -236,6 +236,7 @@ namespace QuanlyKS
         {
             con.Open();
             string sql = "select MaNV,TenNV,GioiTinh,NgaySinh=CONVERT (nvarchar,NgaySinh, 103),CMND,SDT,ChucVu,DiaChi,Luong,ThoiGianVaoLam=convert(varchar,ThoiGianVaoLam, 103),ThoiGianNghi=convert(varchar, ThoiGianNghi, 103) from NhanVien";
+            //string sql = "select * from nhanvien";
             SqlCommand ds = new SqlCommand(sql, con);
             ds.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(ds);

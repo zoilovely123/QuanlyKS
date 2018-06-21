@@ -24,3 +24,5 @@ C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.QuanlyPh.resources
 C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.QuanlyNV.resources
 C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.CTHoaDon.resources
 C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.QuanlyDV.resources
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.HTQLKS.resources
+C:\Users\TRANTRAM\source\repos\QuanlyKS2\obj\Debug\QuanlyKS.thongKe.resources

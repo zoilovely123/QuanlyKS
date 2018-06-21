@@ -51,7 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.cbSear = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -62,9 +61,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.data_dp);
-            this.groupBox1.Location = new System.Drawing.Point(14, 259);
+            this.groupBox1.Location = new System.Drawing.Point(24, 342);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(634, 239);
+            this.groupBox1.Size = new System.Drawing.Size(758, 239);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách đặt phòng:";
@@ -74,7 +73,7 @@
             this.data_dp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_dp.Location = new System.Drawing.Point(14, 20);
             this.data_dp.Name = "data_dp";
-            this.data_dp.Size = new System.Drawing.Size(614, 207);
+            this.data_dp.Size = new System.Drawing.Size(735, 207);
             this.data_dp.TabIndex = 0;
             this.data_dp.MouseClick += new System.Windows.Forms.MouseEventHandler(this.data_dp_MouseClick_1);
             // 
@@ -100,16 +99,16 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(14, 12);
+            this.groupBox2.Location = new System.Drawing.Point(24, 95);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(628, 207);
+            this.groupBox2.Size = new System.Drawing.Size(758, 207);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin đặt phòng:";
             // 
             // txttinhtrang
             // 
-            this.txttinhtrang.Location = new System.Drawing.Point(389, 136);
+            this.txttinhtrang.Location = new System.Drawing.Point(492, 134);
             this.txttinhtrang.Name = "txttinhtrang";
             this.txttinhtrang.ReadOnly = true;
             this.txttinhtrang.Size = new System.Drawing.Size(217, 20);
@@ -117,7 +116,7 @@
             // 
             // txttimenhan
             // 
-            this.txttimenhan.Location = new System.Drawing.Point(450, 104);
+            this.txttimenhan.Location = new System.Drawing.Point(553, 102);
             this.txttimenhan.Name = "txttimenhan";
             this.txttimenhan.ReadOnly = true;
             this.txttimenhan.Size = new System.Drawing.Size(156, 20);
@@ -133,7 +132,7 @@
             // 
             // txtsdt
             // 
-            this.txtsdt.Location = new System.Drawing.Point(413, 74);
+            this.txtsdt.Location = new System.Drawing.Point(516, 72);
             this.txtsdt.Name = "txtsdt";
             this.txtsdt.ReadOnly = true;
             this.txtsdt.Size = new System.Drawing.Size(193, 20);
@@ -141,7 +140,7 @@
             // 
             // txtcmnd
             // 
-            this.txtcmnd.Location = new System.Drawing.Point(413, 48);
+            this.txtcmnd.Location = new System.Drawing.Point(516, 46);
             this.txtcmnd.Name = "txtcmnd";
             this.txtcmnd.ReadOnly = true;
             this.txtcmnd.Size = new System.Drawing.Size(193, 20);
@@ -149,7 +148,7 @@
             // 
             // txtten
             // 
-            this.txtten.Location = new System.Drawing.Point(413, 22);
+            this.txtten.Location = new System.Drawing.Point(516, 20);
             this.txtten.Name = "txtten";
             this.txtten.ReadOnly = true;
             this.txtten.Size = new System.Drawing.Size(193, 20);
@@ -183,7 +182,7 @@
             // 
             this.bthuy.BackColor = System.Drawing.Color.Red;
             this.bthuy.Enabled = false;
-            this.bthuy.Location = new System.Drawing.Point(413, 162);
+            this.bthuy.Location = new System.Drawing.Point(516, 160);
             this.bthuy.Name = "bthuy";
             this.bthuy.Size = new System.Drawing.Size(98, 33);
             this.bthuy.TabIndex = 10;
@@ -195,7 +194,7 @@
             // 
             this.btnhan.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnhan.Enabled = false;
-            this.btnhan.Location = new System.Drawing.Point(518, 162);
+            this.btnhan.Location = new System.Drawing.Point(621, 160);
             this.btnhan.Name = "btnhan";
             this.btnhan.Size = new System.Drawing.Size(91, 33);
             this.btnhan.TabIndex = 9;
@@ -206,7 +205,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(330, 139);
+            this.label9.Location = new System.Drawing.Point(433, 137);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 13);
             this.label9.TabIndex = 8;
@@ -215,7 +214,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(330, 107);
+            this.label8.Location = new System.Drawing.Point(433, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(114, 13);
             this.label8.TabIndex = 7;
@@ -233,7 +232,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(330, 75);
+            this.label6.Location = new System.Drawing.Point(433, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 13);
             this.label6.TabIndex = 5;
@@ -242,7 +241,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(330, 50);
+            this.label5.Location = new System.Drawing.Point(433, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 4;
@@ -251,7 +250,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(330, 29);
+            this.label4.Location = new System.Drawing.Point(433, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 13);
             this.label4.TabIndex = 3;
@@ -284,16 +283,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã phòng:";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(14, 504);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Quay lại";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // cbSear
             // 
             this.cbSear.FormattingEnabled = true;
@@ -302,7 +291,7 @@
             "Wait",
             "Used",
             "Close"});
-            this.cbSear.Location = new System.Drawing.Point(519, 232);
+            this.cbSear.Location = new System.Drawing.Point(652, 312);
             this.cbSear.Name = "cbSear";
             this.cbSear.Size = new System.Drawing.Size(121, 21);
             this.cbSear.TabIndex = 22;
@@ -312,7 +301,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(447, 235);
+            this.label10.Location = new System.Drawing.Point(580, 315);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 13);
             this.label10.TabIndex = 21;
@@ -322,13 +311,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 535);
+            this.ClientSize = new System.Drawing.Size(830, 581);
             this.Controls.Add(this.cbSear);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanlyDP";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Đặt Phòng";
             this.Load += new System.EventHandler(this.QuanlyDP_Load);
             this.groupBox1.ResumeLayout(false);
@@ -365,7 +355,6 @@
         private System.Windows.Forms.Button bthuy;
         private System.Windows.Forms.Button btnhan;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox cbSear;
         private System.Windows.Forms.Label label10;
     }

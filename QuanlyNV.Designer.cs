@@ -59,7 +59,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.cbbChucVu = new System.Windows.Forms.ComboBox();
-            this.btQuaylai = new System.Windows.Forms.Button();
             this.data_DSNV = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PanTool.SuspendLayout();
@@ -251,7 +250,7 @@
             this.gbTTCTNV.Controls.Add(this.label3);
             this.gbTTCTNV.Controls.Add(this.lbGTinh);
             this.gbTTCTNV.Controls.Add(this.lbMaNV);
-            this.gbTTCTNV.Location = new System.Drawing.Point(12, 12);
+            this.gbTTCTNV.Location = new System.Drawing.Point(89, 103);
             this.gbTTCTNV.Name = "gbTTCTNV";
             this.gbTTCTNV.Size = new System.Drawing.Size(660, 202);
             this.gbTTCTNV.TabIndex = 5;
@@ -386,16 +385,6 @@
             this.cbbChucVu.Size = new System.Drawing.Size(131, 21);
             this.cbbChucVu.TabIndex = 5;
             // 
-            // btQuaylai
-            // 
-            this.btQuaylai.Location = new System.Drawing.Point(12, 467);
-            this.btQuaylai.Name = "btQuaylai";
-            this.btQuaylai.Size = new System.Drawing.Size(75, 23);
-            this.btQuaylai.TabIndex = 4;
-            this.btQuaylai.Text = "Quay lại";
-            this.btQuaylai.UseVisualStyleBackColor = true;
-            this.btQuaylai.Click += new System.EventHandler(this.btQuaylai_Click);
-            // 
             // data_DSNV
             // 
             this.data_DSNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -408,7 +397,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.data_DSNV);
-            this.groupBox1.Location = new System.Drawing.Point(12, 220);
+            this.groupBox1.Location = new System.Drawing.Point(89, 311);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(660, 241);
             this.groupBox1.TabIndex = 3;
@@ -419,11 +408,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 495);
+            this.ClientSize = new System.Drawing.Size(830, 581);
             this.Controls.Add(this.gbTTCTNV);
-            this.Controls.Add(this.btQuaylai);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanlyNV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
             this.Load += new System.EventHandler(this.QuanlyNV_Load);
             this.PanTool.ResumeLayout(false);
@@ -456,7 +446,6 @@
         private System.Windows.Forms.Label lbMaNV;
         private System.Windows.Forms.GroupBox gbTTCTNV;
         private System.Windows.Forms.DateTimePicker dtNgaySinh;
-        private System.Windows.Forms.Button btQuaylai;
         private System.Windows.Forms.DataGridView data_DSNV;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbbChucVu;

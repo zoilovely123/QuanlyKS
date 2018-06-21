@@ -30,7 +30,11 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.data_DSPh = new System.Windows.Forms.DataGridView();
-            this.btQuaylai = new System.Windows.Forms.Button();
+            this.MaP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sogiuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tinhtrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbTTCT = new System.Windows.Forms.GroupBox();
             this.PanTool = new System.Windows.Forms.FlowLayoutPanel();
             this.btAdd = new System.Windows.Forms.Button();
@@ -50,11 +54,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.MaP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sogiuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tinhtrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_DSPh)).BeginInit();
             this.gbTTCT.SuspendLayout();
@@ -65,7 +64,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.data_DSPh);
-            this.groupBox1.Location = new System.Drawing.Point(12, 164);
+            this.groupBox1.Location = new System.Drawing.Point(131, 226);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(557, 297);
             this.groupBox1.TabIndex = 0;
@@ -90,15 +89,40 @@
             this.data_DSPh.TabIndex = 0;
             this.data_DSPh.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.data_DSPh_CellContentClick);
             // 
-            // btQuaylai
+            // MaP
             // 
-            this.btQuaylai.Location = new System.Drawing.Point(12, 467);
-            this.btQuaylai.Name = "btQuaylai";
-            this.btQuaylai.Size = new System.Drawing.Size(75, 23);
-            this.btQuaylai.TabIndex = 1;
-            this.btQuaylai.Text = "Quay lại";
-            this.btQuaylai.UseVisualStyleBackColor = true;
-            this.btQuaylai.Click += new System.EventHandler(this.btQuaylai_Click);
+            this.MaP.DataPropertyName = "maPh";
+            this.MaP.HeaderText = "Ma Phong";
+            this.MaP.Name = "MaP";
+            this.MaP.ReadOnly = true;
+            // 
+            // loai
+            // 
+            this.loai.DataPropertyName = "loai";
+            this.loai.HeaderText = "Loai";
+            this.loai.Name = "loai";
+            this.loai.ReadOnly = true;
+            // 
+            // donGia
+            // 
+            this.donGia.DataPropertyName = "donGia";
+            this.donGia.HeaderText = "Don gia";
+            this.donGia.Name = "donGia";
+            this.donGia.ReadOnly = true;
+            // 
+            // sogiuong
+            // 
+            this.sogiuong.DataPropertyName = "soGiuong";
+            this.sogiuong.HeaderText = "So giuong";
+            this.sogiuong.Name = "sogiuong";
+            this.sogiuong.ReadOnly = true;
+            // 
+            // tinhtrang
+            // 
+            this.tinhtrang.DataPropertyName = "tinhTrang";
+            this.tinhtrang.HeaderText = "Tinh trang";
+            this.tinhtrang.Name = "tinhtrang";
+            this.tinhtrang.ReadOnly = true;
             // 
             // gbTTCT
             // 
@@ -114,7 +138,7 @@
             this.gbTTCT.Controls.Add(this.label3);
             this.gbTTCT.Controls.Add(this.label2);
             this.gbTTCT.Controls.Add(this.label1);
-            this.gbTTCT.Location = new System.Drawing.Point(12, 12);
+            this.gbTTCT.Location = new System.Drawing.Point(131, 74);
             this.gbTTCT.Name = "gbTTCT";
             this.gbTTCT.Size = new System.Drawing.Size(557, 146);
             this.gbTTCT.TabIndex = 2;
@@ -299,45 +323,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã phòng:";
             // 
-            // MaP
-            // 
-            this.MaP.DataPropertyName = "maPh";
-            this.MaP.HeaderText = "Ma Phong";
-            this.MaP.Name = "MaP";
-            // 
-            // loai
-            // 
-            this.loai.DataPropertyName = "loai";
-            this.loai.HeaderText = "Loai";
-            this.loai.Name = "loai";
-            // 
-            // donGia
-            // 
-            this.donGia.DataPropertyName = "donGia";
-            this.donGia.HeaderText = "Don gia";
-            this.donGia.Name = "donGia";
-            // 
-            // sogiuong
-            // 
-            this.sogiuong.DataPropertyName = "soGiuong";
-            this.sogiuong.HeaderText = "So giuong";
-            this.sogiuong.Name = "sogiuong";
-            // 
-            // tinhtrang
-            // 
-            this.tinhtrang.DataPropertyName = "tinhTrang";
-            this.tinhtrang.HeaderText = "Tinh trang";
-            this.tinhtrang.Name = "tinhtrang";
-            // 
             // QuanlyPh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 502);
+            this.ClientSize = new System.Drawing.Size(830, 581);
             this.Controls.Add(this.gbTTCT);
-            this.Controls.Add(this.btQuaylai);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanlyPh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý phòng";
             this.Load += new System.EventHandler(this.QuanlyPh_Load);
             this.groupBox1.ResumeLayout(false);
@@ -354,7 +349,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView data_DSPh;
-        private System.Windows.Forms.Button btQuaylai;
         private System.Windows.Forms.GroupBox gbTTCT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

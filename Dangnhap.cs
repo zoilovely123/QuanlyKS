@@ -22,15 +22,15 @@ namespace QuanlyKS
         {
 
         }
-        private void quanlyTP_formclosed(object sender, FormClosedEventArgs e)
+        private void quanly_formclosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
         }
         private void btnDangnhap_Click(object sender, EventArgs e)
         {
                 this.Hide();
-                QuanlyTP quanly = new QuanlyTP();
-                quanly.FormClosed += new FormClosedEventHandler(quanlyTP_formclosed);
+                HTQLKS quanly = new HTQLKS();
+                quanly.FormClosed += new FormClosedEventHandler(quanly_formclosed);
                 quanly.TenDangNhap = txtUser.Text;
                 quanly.Show();
                 txtUser.Clear();

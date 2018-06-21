@@ -45,11 +45,10 @@ namespace QuanlyKS
                         cmd.Parameters.Add(new SqlParameter("@dongia", txtDonGia.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@sogiuong", txtSoGiuong.Text.Trim()));
                         cmd.ExecuteNonQuery();
-
-                        con.Close();
-                        MessageBox.Show("Sửa thông tin nhân viên thành công!");
+                        MessageBox.Show("Sửa thông tin phòng thành công!");
                     }
                     catch { MessageBox.Show("Không thành công! Vui lòng kiểm tra lại!"); }
+                con.Close();
             }
             else
             {
@@ -67,11 +66,10 @@ namespace QuanlyKS
                         cmd.Parameters.Add(new SqlParameter("@dongia", txtDonGia.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@sogiuong", txtSoGiuong.Text.Trim()));
                         cmd.ExecuteNonQuery();
-
-                        con.Close();
-                        MessageBox.Show("Thêm nhân viên thành công!");
+                        MessageBox.Show("Thêm phòng thành công!");
                     }
                     catch { MessageBox.Show("Không thành công! Vui lòng kiểm tra lại!"); }
+                con.Close();
             }
             loadGbTTCT();
 

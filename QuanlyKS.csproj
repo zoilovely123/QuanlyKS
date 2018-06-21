@@ -59,6 +59,18 @@
       <DependentUpon>Dangnhap.cs</DependentUpon>
     </Compile>
     <Compile Include="DBconnecter.cs" />
+    <Compile Include="thongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thongKe.Designer.cs">
+      <DependentUpon>thongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTQLKS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HTQLKS.Designer.cs">
+      <DependentUpon>HTQLKS.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanlyDP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dangnhap.resx">
       <DependentUpon>Dangnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thongKe.resx">
+      <DependentUpon>thongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HTQLKS.resx">
+      <DependentUpon>HTQLKS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanlyDP.resx">
       <DependentUpon>QuanlyDP.cs</DependentUpon>
@@ -146,6 +164,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chi_tiet_SP.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vcredist.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

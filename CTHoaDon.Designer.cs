@@ -137,7 +137,7 @@
             // 
             // txttimeT
             // 
-            this.txttimeT.Location = new System.Drawing.Point(126, 243);
+            this.txttimeT.Location = new System.Drawing.Point(127, 242);
             this.txttimeT.Name = "txttimeT";
             this.txttimeT.ReadOnly = true;
             this.txttimeT.Size = new System.Drawing.Size(134, 20);

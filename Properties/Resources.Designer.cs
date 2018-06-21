@@ -63,6 +63,16 @@ namespace QuanlyKS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Chi_tiet_SP {
+            get {
+                object obj = ResourceManager.GetObject("Chi_tiet_SP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_add_circle_outline_326501 {
             get {
                 object obj = ResourceManager.GetObject("if_add-circle-outline_326501", resourceCulture);
@@ -86,6 +96,16 @@ namespace QuanlyKS.Properties {
         internal static System.Drawing.Bitmap if_edit_216184 {
             get {
                 object obj = ResourceManager.GetObject("if_edit_216184", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vcredist {
+            get {
+                object obj = ResourceManager.GetObject("vcredist", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -31,7 +31,7 @@ namespace QuanlyKS
                 {
                     con.Open();
                     string matp;
-                    matp = DateTime.Now.ToString("ddMMhhmmss");
+                    matp = DateTime.Now.ToString("yyyyMMddhhmmss");
                     string update_DP = "update DatPhong set tinhTrang=@tinhtrang , timeNPh=@timeNPh where maPh=@maPh";
                     SqlCommand cm = new SqlCommand(update_DP, con);
                     cm.CommandType = CommandType.Text;

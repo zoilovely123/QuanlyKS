@@ -23,7 +23,7 @@ namespace QuanlyKS
         {
             btThToan.Enabled = false;
             con.Open();
-            string sql = "select maTPh,ThuePhong.maPh,tenThue,cmnd,sdt,timeNPh=convert(varchar,timeNPh,100),loai,soGiuong,donGia from ThuePhong inner join Phong on ThuePhong.maPh = Phong.maPh where ThuePhong.maPh = @maph and ThuePhong.tinhtrang=@tinhtrang";
+            string sql = "select maTPh,ThuePhong.maPh,tenThue,cmnd,sdt,timeNPh=convert(varchar,timeNPh),loai,soGiuong,donGia from ThuePhong inner join Phong on ThuePhong.maPh = Phong.maPh where ThuePhong.maPh = @maph and ThuePhong.tinhtrang=@tinhtrang";
             SqlCommand ds = new SqlCommand(sql, con);
             ds.Parameters.Add(new SqlParameter("@maph", maphong.Trim()));
             ds.Parameters.Add(new SqlParameter("@tinhtrang","New"));

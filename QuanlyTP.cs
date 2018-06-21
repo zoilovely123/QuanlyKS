@@ -13,17 +13,12 @@ namespace QuanlyKS
 {
     public partial class QuanlyTP : Form
     {
-        private string tendangnhap;
         public QuanlyTP()
         {
             InitializeComponent();
         }
-        public string TenDangNhap
-        {
-            get { return tendangnhap; }
-            set { tendangnhap = value; }
-        }
-
+       
+        
        
         SqlConnection con = DBconnecter.sqlConnector();
 
@@ -35,67 +30,21 @@ namespace QuanlyKS
 
         private void quanlyDP_formclosed(object sender, FormClosedEventArgs e)
         {
-            this.Show();
             load();
+
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string timegd = timeGD.Value.ToString("yyyy/MM/dd hh:mm:ss");
-            if (MessageBox.Show("Xác nhận thuê phòng!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-            {
-                string matp;
-                matp = timeGD.Value.ToString("ddMMhhmmss");
-                con.Open();
-                string add_TP = "insert into ThuePhong values(@maTPh,@maPh,@tenThue,@cmnd,@sdt,@timeNPh,NULL,NULL,@tinhtrang)";
-                SqlCommand cmd = new SqlCommand(add_TP, con);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add(new SqlParameter("@maTPh", matp.Trim()));
-                cmd.Parameters.Add(new SqlParameter("@maPh", txtMaph.Text.Trim()));
-                cmd.Parameters.Add(new SqlParameter("@tenThue", txtTen.Text.Trim()));
-                cmd.Parameters.Add(new SqlParameter("@cmnd", txtCMND.Text.Trim()));
-                cmd.Parameters.Add(new SqlParameter("@sdt", txtSDT.Text.Trim()));
-                cmd.Parameters.Add(new SqlParameter("@timeNPh", timegd.Trim()));
-                cmd.Parameters.Add(new SqlParameter("@tinhtrang", "New"));
-                cmd.ExecuteNonQuery();
-                string update_Ph = "update Phong set tinhTrang=@tinhtrang where maPh=@maPh";
-                SqlCommand cm = new SqlCommand(update_Ph, con);
-                cm.CommandType = CommandType.Text;
-                cm.Parameters.Add(new SqlParameter("@maPh", txtMaph.Text.Trim()));
-                cm.Parameters.Add(new SqlParameter("@tinhtrang", "Used"));
-                cm.ExecuteNonQuery();
-                con.Close();
-                re_load();
-                load();
-                MessageBox.Show("Thuê phòng thành công!");
-            }
-        }
+
 
         private void QuanlyTP_Load(object sender, EventArgs e)
         {
+
             load();
-            lblXinchao.Text = "Xin chào, " + tendangnhap;
-            if (tendangnhap == "admin")
-            {
-
-            }
-            else
-            {
-                quanlyPh.Visible = false;
-                quanlyNV.Visible = false;
-                thongke.Visible = false;
-            }
+            
         }
 
-        private void quanLyĐătPhongToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            QuanlyDP quanly = new QuanlyDP();
-            quanly.FormClosed += new FormClosedEventHandler(quanlyDP_formclosed);
-            quanly.Show();
-        }
-
+ 
         private void quanlyPh_formclosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
@@ -122,45 +71,7 @@ namespace QuanlyKS
             quanly.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (txtCMND.Text != "" && txtSDT.Text != "" && txtTen.Text != "")
-            {
-                if (MessageBox.Show("Xác nhận đặt phòng!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        string madp;
-                        madp = timeGD.Value.ToString("ddMMyyyyhhmmss");
-                        string timegd;
-                        timegd = timeGD.Value.ToString("yyyy/MM/dd hh:mm:ss");
-                        con.Open();
-                        string add_DP = "insert into DatPhong values(@maDPh,@maPh,@tenDat,@cmnd,@sdt,@timeDP,NULL,@tinhtrang)";
-                        SqlCommand cmd = new SqlCommand(add_DP, con);
-                        cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.Add(new SqlParameter("@maDPh", madp.Trim()));
-                        cmd.Parameters.Add(new SqlParameter("@maPh", txtMaph.Text.Trim()));
-                        cmd.Parameters.Add(new SqlParameter("@tenDat", txtTen.Text.Trim()));
-                        cmd.Parameters.Add(new SqlParameter("@cmnd", txtCMND.Text.Trim()));
-                        cmd.Parameters.Add(new SqlParameter("@sdt", txtSDT.Text.Trim()));
-                        cmd.Parameters.Add(new SqlParameter("@timeDP", timegd.Trim()));
-                        cmd.Parameters.Add(new SqlParameter("@tinhtrang", "Wait"));
-                        cmd.ExecuteNonQuery();
-                        string update_Ph = "update Phong set tinhTrang=@tinhtrang where maPh=@maPh";
-                        SqlCommand cm = new SqlCommand(update_Ph, con);
-                        cm.CommandType = CommandType.Text;
-                        cm.Parameters.Add(new SqlParameter("@maPh", txtMaph.Text.Trim()));
-                        cm.Parameters.Add(new SqlParameter("@tinhtrang","Wait"));
-                        cm.ExecuteNonQuery();
-                        con.Close();
-                        MessageBox.Show("Đặt phòng thành công!");
-                        re_load();
-                        load();
-                    }
-                    catch { MessageBox.Show("Không thành công! Vui lòng kiểm tra lại!"); }
-                }
-            }
-        }
+
 
         public void re_load()
         {
@@ -177,6 +88,7 @@ namespace QuanlyKS
         public void load()
         {
             con.Open();
+            pnDP.Show();
             string sql = "select * from Phong";
             SqlCommand ds = new SqlCommand(sql, con);
             ds.CommandType = CommandType.Text;
@@ -188,26 +100,7 @@ namespace QuanlyKS
             re_load();
         }
         public string tinhtrang;
-        private void dt_DSP_MouseClick(object sender, MouseEventArgs e)
-        {
-            re_load();
-            load_toTB(true);
-            if (tinhtrang=="Null")
-            {
-                txtCMND.ReadOnly = false;
-                txtSDT.ReadOnly = false;
-                txtTen.ReadOnly = false;
-                txtTen.Text = null;
-                txtSDT.Text = null;
-                txtCMND.Text = null;
-                btThue.Enabled = btDat.Enabled = true;
-            }
-            else
-            {
-                if (tinhtrang == "Used") { btTra.Enabled = true; }
-                else re_load();
-            }
-        }
+
         public void load_toTB(Boolean check)
         {
             if (check)
@@ -229,10 +122,121 @@ namespace QuanlyKS
             }
         }
 
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+
+
+        private void CTHoaDon_formclosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+            load();
+        }
+
+        private void dt_DSP_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            re_load();
+            load_toTB(true);
+            if (tinhtrang == "Null")
+            {
+                txtCMND.ReadOnly = false;
+                txtSDT.ReadOnly = false;
+                txtTen.ReadOnly = false;
+                txtTen.Text = null;
+                txtSDT.Text = null;
+                txtCMND.Text = null;
+                btThue.Enabled = btDat.Enabled = true;
+            }
+            else
+            {
+                if (tinhtrang == "Used") { btTra.Enabled = true; }
+                else re_load();
+            }
+        }
+
+        private void btTra_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            CTHoaDon quanly = new CTHoaDon();
+            quanly.FormClosed += new FormClosedEventHandler(CTHoaDon_formclosed);
+            quanly.MaPhong = txtMaph.Text.ToString();
+            quanly.Show();
+        }
+
+        private void btDat_Click(object sender, EventArgs e)
+        {
+            if (txtCMND.Text != "" && txtSDT.Text != "" && txtTen.Text != "")
+            {
+                if (MessageBox.Show("Xác nhận đặt phòng!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string madp;
+                        madp = timeGD.Value.ToString("yyyyMMddhhmmss");
+                        string timegd;
+                        timegd = timeGD.Value.ToString("yyyy/MM/dd hh:mm:ss");
+                        con.Open();
+                        string add_DP = "insert into DatPhong values(@maDPh,@maPh,@tenDat,@cmnd,@sdt,@timeDP,NULL,@tinhtrang)";
+                        SqlCommand cmd = new SqlCommand(add_DP, con);
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.Add(new SqlParameter("@maDPh", madp.Trim()));
+                        cmd.Parameters.Add(new SqlParameter("@maPh", txtMaph.Text.Trim()));
+                        cmd.Parameters.Add(new SqlParameter("@tenDat", txtTen.Text.Trim()));
+                        cmd.Parameters.Add(new SqlParameter("@cmnd", txtCMND.Text.Trim()));
+                        cmd.Parameters.Add(new SqlParameter("@sdt", txtSDT.Text.Trim()));
+                        cmd.Parameters.Add(new SqlParameter("@timeDP", timegd.Trim()));
+                        cmd.Parameters.Add(new SqlParameter("@tinhtrang", "Wait"));
+                        cmd.ExecuteNonQuery();
+                        string update_Ph = "update Phong set tinhTrang=@tinhtrang where maPh=@maPh";
+                        SqlCommand cm = new SqlCommand(update_Ph, con);
+                        cm.CommandType = CommandType.Text;
+                        cm.Parameters.Add(new SqlParameter("@maPh", txtMaph.Text.Trim()));
+                        cm.Parameters.Add(new SqlParameter("@tinhtrang", "Wait"));
+                        cm.ExecuteNonQuery();
+                        con.Close();
+                        MessageBox.Show("Đặt phòng thành công!");
+                        re_load();
+                        load();
+                    }
+                    catch { MessageBox.Show("Không thành công! Vui lòng kiểm tra lại!"); }
+                }
+            }
+        }
+
+        private void btThue_Click(object sender, EventArgs e)
+        {
+            string timegd = timeGD.Value.ToString("yyyy/MM/dd hh:mm:ss");
+            if (MessageBox.Show("Xác nhận thuê phòng!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                string matp;
+                matp = timeGD.Value.ToString("yyyyMMddhhmmmss");
+                con.Open();
+                string add_TP = "insert into ThuePhong values(@maTPh,@maPh,@tenThue,@cmnd,@sdt,@timeNPh,NULL,NULL,@tinhtrang)";
+                SqlCommand cmd = new SqlCommand(add_TP, con);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("@maTPh", matp.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@maPh", txtMaph.Text.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@tenThue", txtTen.Text.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@cmnd", txtCMND.Text.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@sdt", txtSDT.Text.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@timeNPh", timegd.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@tinhtrang", "New"));
+                cmd.ExecuteNonQuery();
+                string update_Ph = "update Phong set tinhTrang=@tinhtrang where maPh=@maPh";
+                SqlCommand cm = new SqlCommand(update_Ph, con);
+                cm.CommandType = CommandType.Text;
+                cm.Parameters.Add(new SqlParameter("@maPh", txtMaph.Text.Trim()));
+                cm.Parameters.Add(new SqlParameter("@tinhtrang", "Used"));
+                cm.ExecuteNonQuery();
+                con.Close();
+                re_load();
+                load();
+                MessageBox.Show("Thuê phòng thành công!");
+            }
+        }
+
+        private void cbSear_SelectedValueChanged(object sender, EventArgs e)
         {
             if (cbSear.Text == "All") { load(); }
-            else {
+            else
+            {
                 con.Open();
                 string sql = "select * from Phong where tinhTrang LIKE @tinhtrang";
                 SqlCommand ds = new SqlCommand(sql, con);
@@ -247,32 +251,6 @@ namespace QuanlyKS
                 re_load();
 
             }
-        }
-
-        private void CTHoaDon_formclosed(object sender, FormClosedEventArgs e)
-        {
-            this.Show();
-            load();
-        }
-        private void btTra_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CTHoaDon quanly = new CTHoaDon();
-            quanly.FormClosed += new FormClosedEventHandler(CTHoaDon_formclosed);
-            quanly.MaPhong =txtMaph.Text.ToString();
-            quanly.Show();
-        }
-        private void quanlyDV_formclose(object sender, FormClosedEventArgs e)
-        {
-            this.Show();
-            load();
-        }
-        private void quảnLýDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            QuanlyDV quanly = new QuanlyDV();
-            quanly.FormClosed += new FormClosedEventHandler(quanlyDV_formclose);
-            quanly.Show();
         }
     }   
 }
