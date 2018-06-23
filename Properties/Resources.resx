@@ -127,10 +127,13 @@
   <data name="if_add-circle-outline_326501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_add-circle-outline_326501.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Chi_tiet_SP" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Chi_tiet_SP.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_house_of_love-home_2222741" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_house_of_love-home_2222741.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vcredist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vcredist.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="if_02_icons_2191535" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_02_icons_2191535.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

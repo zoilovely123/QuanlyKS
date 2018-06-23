@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HTQLKS));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.quanLyĐătPhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanlyDV = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,31 +39,20 @@
             this.lblXinchao = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
+            this.trangChủToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.menuStrip1);
             this.flowLayoutPanel1.Controls.Add(this.lblXinchao);
             this.flowLayoutPanel1.Controls.Add(this.linkLabel1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(873, 33);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(873, 34);
             this.flowLayoutPanel1.TabIndex = 15;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::QuanlyKS.Properties.Resources.Chi_tiet_SP;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 21);
-            this.button1.TabIndex = 18;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
@@ -71,14 +60,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.trangChủToolStripMenuItem,
             this.quanLyĐătPhongToolStripMenuItem,
             this.quanlyDV,
             this.quanlyPh,
             this.quanlyNV,
             this.thongke});
-            this.menuStrip1.Location = new System.Drawing.Point(41, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(602, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(599, 24);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -120,7 +110,7 @@
             // lblXinchao
             // 
             this.lblXinchao.AutoSize = true;
-            this.lblXinchao.Location = new System.Drawing.Point(646, 0);
+            this.lblXinchao.Location = new System.Drawing.Point(602, 0);
             this.lblXinchao.Name = "lblXinchao";
             this.lblXinchao.Size = new System.Drawing.Size(49, 13);
             this.lblXinchao.TabIndex = 16;
@@ -130,7 +120,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(701, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(657, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(56, 13);
             this.linkLabel1.TabIndex = 15;
@@ -151,6 +141,14 @@
             this.label8.Text = "HỆ THỐNG QUẢN LÝ CHO THUÊ PHÒNG KHÁCH SẠN";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // trangChủToolStripMenuItem
+            // 
+            this.trangChủToolStripMenuItem.Image = global::QuanlyKS.Properties.Resources.if_house_of_love_home_2222741;
+            this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
+            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.trangChủToolStripMenuItem.Text = "Trang chủ";
+            this.trangChủToolStripMenuItem.Click += new System.EventHandler(this.trangChủToolStripMenuItem_Click);
+            // 
             // HTQLKS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +158,7 @@
             this.ClientSize = new System.Drawing.Size(877, 608);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label8);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(893, 647);
             this.MinimumSize = new System.Drawing.Size(893, 647);
             this.Name = "HTQLKS";
@@ -177,7 +176,6 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem quanLyĐătPhongToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quanlyDV;
@@ -187,5 +185,6 @@
         private System.Windows.Forms.Label lblXinchao;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ToolStripMenuItem trangChủToolStripMenuItem;
     }
 }

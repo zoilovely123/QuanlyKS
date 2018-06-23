@@ -49,22 +49,22 @@
             this.panel2.Controls.Add(this.tb_tien);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(12, 125);
+            this.panel2.Location = new System.Drawing.Point(12, 90);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(806, 444);
+            this.panel2.Size = new System.Drawing.Size(806, 461);
             this.panel2.TabIndex = 1;
             // 
             // dt_tien
             // 
             this.dt_tien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dt_tien.Location = new System.Drawing.Point(3, 53);
+            this.dt_tien.Location = new System.Drawing.Point(9, 53);
             this.dt_tien.Name = "dt_tien";
-            this.dt_tien.Size = new System.Drawing.Size(800, 350);
+            this.dt_tien.Size = new System.Drawing.Size(786, 364);
             this.dt_tien.TabIndex = 3;
             // 
             // tb_tien
             // 
-            this.tb_tien.Location = new System.Drawing.Point(575, 409);
+            this.tb_tien.Location = new System.Drawing.Point(585, 428);
             this.tb_tien.Name = "tb_tien";
             this.tb_tien.Size = new System.Drawing.Size(210, 20);
             this.tb_tien.TabIndex = 2;
@@ -72,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(514, 416);
+            this.label3.Location = new System.Drawing.Point(524, 435);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 2;
@@ -136,10 +136,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 581);
+            this.ClientSize = new System.Drawing.Size(830, 576);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "thongKe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống kê";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

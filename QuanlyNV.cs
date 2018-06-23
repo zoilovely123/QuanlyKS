@@ -24,9 +24,7 @@ namespace QuanlyKS
         }
 
         SqlConnection con = DBconnecter.sqlConnector();
-        private object da;
-        private object ds;
-        private string manv, tennv, gioitinh, ngaysinh, Sdt, Cmnd, chucvu, diachi, timelam, timenghi;
+        private string manv, ngaysinh, timelam, timenghi;
 
         private void btAdd_Click(object sender, EventArgs e)
         {

@@ -61,11 +61,6 @@ namespace QuanlyKS
             truoc = quanly;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            home();
-        }
-
         private void quanlyDV_Click(object sender, EventArgs e)
         {
             QuanlyDV quanly = new QuanlyDV();
@@ -105,6 +100,11 @@ namespace QuanlyKS
             quanly.Show();
             truoc.Close();
             truoc = quanly;
+        }
+
+        private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            home();
         }
     }
 }

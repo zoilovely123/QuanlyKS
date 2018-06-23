@@ -63,9 +63,9 @@ namespace QuanlyKS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Chi_tiet_SP {
+        internal static System.Drawing.Bitmap if_02_icons_2191535 {
             get {
-                object obj = ResourceManager.GetObject("Chi_tiet_SP", resourceCulture);
+                object obj = ResourceManager.GetObject("if_02_icons_2191535", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +96,16 @@ namespace QuanlyKS.Properties {
         internal static System.Drawing.Bitmap if_edit_216184 {
             get {
                 object obj = ResourceManager.GetObject("if_edit_216184", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_house_of_love_home_2222741 {
+            get {
+                object obj = ResourceManager.GetObject("if_house_of_love-home_2222741", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -252,5 +252,10 @@ namespace QuanlyKS
 
             }
         }
+
+        private void pnDP_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }   
 }

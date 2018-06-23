@@ -67,6 +67,7 @@
             this.pnDP.Name = "pnDP";
             this.pnDP.Size = new System.Drawing.Size(801, 512);
             this.pnDP.TabIndex = 11;
+            this.pnDP.Paint += new System.Windows.Forms.PaintEventHandler(this.pnDP_Paint);
             // 
             // cbSear
             // 
